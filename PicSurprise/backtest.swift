@@ -5,10 +5,11 @@ struct backRandomImageView: View {
     @State private var number = Int(arc4random_uniform(1332))
     @State private var imageHistory: [Int] = []
     @State private var forwardImageHistory: [Int] = []
-    @State private var previousImageHistory: [Int] = []
     @State private var isNextButtonEnabled = false
     @State private var isPrevButtonEnabled = false
+    @State private var previousImageHistory: [Int] = []
 
+    
     @Environment(\.openURL)
     var openURL
     
@@ -17,7 +18,8 @@ struct backRandomImageView: View {
         number = Int(arc4random_uniform(1332))
         forwardImageHistory.removeAll()
         isNextButtonEnabled = false
-        isPrevButtonEnabled = !imageHistory.isEmpty
+        isPrevButtonEnabled = true
+
     }
     
     func previousImage() {
@@ -25,11 +27,8 @@ struct backRandomImageView: View {
             forwardImageHistory.append(number)
             showDetails = true
             number = previousNumber
-            isNextButtonEnabled = true
+           isNextButtonEnabled = true
             isPrevButtonEnabled = !imageHistory.isEmpty
-            //isPrevButtonEnabled = !imageHistory.isEmpty
-
-            //isPrevButtonEnabled = !previousImageHistory.isEmpty
         }
     }
     
@@ -40,6 +39,7 @@ struct backRandomImageView: View {
             number = nextNumber
             isNextButtonEnabled = forwardImageHistory.count > 0
             isPrevButtonEnabled = true
+
         }
     }
     
@@ -85,7 +85,8 @@ struct backRandomImageView: View {
                     )
             }
             
-            AsyncImage(url: URL(string: imgUrl)) { phase in
+            AsyncImage(url: URL(string: imgUrl))
+            { phase in
                 switch phase {
                 case .failure:
                     Image(systemName: "photo")
@@ -113,14 +114,15 @@ struct backRandomImageView: View {
             
             Link("View post on All the Pages", destination: URL(string: postUrl)!)
             
+            
             Button("New Picture") {
-                imageHistory.append(number)
                 newNumber()
             }
             .padding()
             .background(Color(red: 0.1, green: 0, blue: 0.3))
             .clipShape(Capsule())
             .disabled(isNextButtonEnabled)
+
             
             HStack {
                 Button("Previous Picture") {
@@ -130,7 +132,7 @@ struct backRandomImageView: View {
                 .background(Color(red: 0.3, green: 0, blue: 0.1))
                 .clipShape(Capsule())
                 .disabled(!isPrevButtonEnabled)
-                
+		
                 Button("Next Picture") {
                     nextImage()
                 }

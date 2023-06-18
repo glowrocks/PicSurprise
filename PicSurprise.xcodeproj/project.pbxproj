@@ -20,6 +20,8 @@
 		279D8BD82A356D35005F4E15 /* test.swift in Sources */ = {isa = PBXBuildFile; fileRef = 279D8BD72A356D35005F4E15 /* test.swift */; };
 		279D8BDA2A356F35005F4E15 /* BDFA3C80-4077-4A17-94E2-3410FE7EA2F6_1_102_o.jpeg in Resources */ = {isa = PBXBuildFile; fileRef = 279D8BD92A356F35005F4E15 /* BDFA3C80-4077-4A17-94E2-3410FE7EA2F6_1_102_o.jpeg */; };
 		27DA01AD2A3EAE43002A538B /* ps1024.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 27DA01AC2A3EAE43002A538B /* ps1024.jpg */; };
+		27DA01B12A3EBB72002A538B /* URLImage in Frameworks */ = {isa = PBXBuildFile; productRef = 27DA01B02A3EBB72002A538B /* URLImage */; };
+		27DA01B32A3EBB72002A538B /* URLImageStore in Frameworks */ = {isa = PBXBuildFile; productRef = 27DA01B22A3EBB72002A538B /* URLImageStore */; };
 		27F32FBE2A3E596D00B6953D /* newrandom.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27F32FBD2A3E596C00B6953D /* newrandom.swift */; };
 /* End PBXBuildFile section */
 
@@ -47,6 +49,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				27DA01B32A3EBB72002A538B /* URLImageStore in Frameworks */,
+				27DA01B12A3EBB72002A538B /* URLImage in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -76,17 +80,15 @@
 				2776D02F2A34153600BD68D7 /* HomeView.swift */,
 				279D8BD72A356D35005F4E15 /* test.swift */,
 				276081DB2A3E696D00796B36 /* backtest.swift */,
-				276081D92A3E5ECB00796B36 /* oldrandom.swift */,
-				2776D02D2A34150800BD68D7 /* RandomImageView.swift */,
-				27F32FBD2A3E596C00B6953D /* newrandom.swift */,
+				27DA01AE2A3EB93F002A538B /* old */,
 				2776D01E2A34145A00BD68D7 /* PicSurpriseApp.swift */,
 				2776D0202A34145A00BD68D7 /* ContentView.swift */,
 				2776D0222A34145B00BD68D7 /* Assets.xcassets */,
 				27DA01AC2A3EAE43002A538B /* ps1024.jpg */,
 				279D8BD92A356F35005F4E15 /* BDFA3C80-4077-4A17-94E2-3410FE7EA2F6_1_102_o.jpeg */,
 				2776D0312A3429B800BD68D7 /* 475695CA-7D1A-4FDC-ABBE-D8C3CC779E60_1_102_o1199.jpeg */,
-				2776D0242A34145B00BD68D7 /* PicSurprise.entitlements */,
 				2776D0252A34145B00BD68D7 /* Preview Content */,
+				2776D0242A34145B00BD68D7 /* PicSurprise.entitlements */,
 			);
 			path = PicSurprise;
 			sourceTree = "<group>";
@@ -97,6 +99,16 @@
 				2776D0262A34145B00BD68D7 /* Preview Assets.xcassets */,
 			);
 			path = "Preview Content";
+			sourceTree = "<group>";
+		};
+		27DA01AE2A3EB93F002A538B /* old */ = {
+			isa = PBXGroup;
+			children = (
+				276081D92A3E5ECB00796B36 /* oldrandom.swift */,
+				2776D02D2A34150800BD68D7 /* RandomImageView.swift */,
+				27F32FBD2A3E596C00B6953D /* newrandom.swift */,
+			);
+			path = old;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -115,6 +127,10 @@
 			dependencies = (
 			);
 			name = PicSurprise;
+			packageProductDependencies = (
+				27DA01B02A3EBB72002A538B /* URLImage */,
+				27DA01B22A3EBB72002A538B /* URLImageStore */,
+			);
 			productName = PicSurprise;
 			productReference = 2776D01B2A34145A00BD68D7 /* PicSurprise.app */;
 			productType = "com.apple.product-type.application";
@@ -143,6 +159,9 @@
 				Base,
 			);
 			mainGroup = 2776D0122A34145A00BD68D7;
+			packageReferences = (
+				27DA01AF2A3EBB72002A538B /* XCRemoteSwiftPackageReference "url-image" */,
+			);
 			productRefGroup = 2776D01C2A34145A00BD68D7 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -438,6 +457,30 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		27DA01AF2A3EBB72002A538B /* XCRemoteSwiftPackageReference "url-image" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/dmytro-anokhin/url-image";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 3.1.1;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		27DA01B02A3EBB72002A538B /* URLImage */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 27DA01AF2A3EBB72002A538B /* XCRemoteSwiftPackageReference "url-image" */;
+			productName = URLImage;
+		};
+		27DA01B22A3EBB72002A538B /* URLImageStore */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 27DA01AF2A3EBB72002A538B /* XCRemoteSwiftPackageReference "url-image" */;
+			productName = URLImageStore;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = 2776D0132A34145A00BD68D7 /* Project object */;
 }
