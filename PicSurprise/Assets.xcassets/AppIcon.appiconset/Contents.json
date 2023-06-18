@@ -1,6 +1,7 @@
 {
   "images" : [
     {
+      "filename" : "ps1024.jpg",
       "idiom" : "universal",
       "platform" : "ios",
       "size" : "1024x1024"
@@ -52,6 +53,7 @@
       "size" : "512x512"
     },
     {
+      "filename" : "ps1024 1.jpg",
       "idiom" : "mac",
       "scale" : "2x",
       "size" : "512x512"

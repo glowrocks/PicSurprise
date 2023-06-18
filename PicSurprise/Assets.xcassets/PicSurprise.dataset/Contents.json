@@ -1,8 +1,9 @@
 {
   "data" : [
     {
-      "filename" : "PicSurprise.entitlements",
-      "idiom" : "universal"
+      "filename" : "ps1024.jpg",
+      "idiom" : "universal",
+      "universal-type-identifier" : "public.jpeg"
     }
   ],
   "info" : {

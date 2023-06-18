@@ -1,6 +1,7 @@
 import SwiftUI
 
 struct HomeView: View {
+    
     var body: some View {
         
         VStack {
@@ -19,9 +20,10 @@ struct HomeView: View {
             
             
             
-           //     .foregroundColor(.blue)
+           //    .foregroundColor(.blue)
 
-            Text("\nRandom Images from my blog, \n   All the Pages (are my days)")
+            Text("\nRandom Images from my blog, \n   All the Pages (are my days)")        .foregroundColor(Color.white)
+
         
                // .padding()
            // Image("475695CA-7D1A-4FDC-ABBE-D8C3CC779E60_1_102_o")
@@ -32,9 +34,12 @@ struct HomeView: View {
             
             
             Text("text & photos © 1974-2023 by Mike Rodriquez")
+                .foregroundColor(Color.white)
             
         }
         .padding()
+        .background(Color.black)
+
     }
     
 }
